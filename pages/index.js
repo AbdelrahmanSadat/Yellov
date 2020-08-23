@@ -4,7 +4,7 @@ import BGOverlay from "../components/BGOverlay";
 
 import {
   // sizing,
-  // height,
+  height,
   // boxSizing,
   typography,
   fontWeight,
@@ -34,9 +34,30 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
   },
-  section01: {
+  sectionMain: {
     backgroundImage: "url(womanLaptopBeach-lg.jpg)",
     minHeight: "100vh",
+    minWidth: "fit-content",
+    color: "white",
+  },
+  sectionAbout: {
+    backgroundColor: "rgb(255, 231, 15)",
+    paddingTop: "2rem",
+    paddingBottom: "2rem",
+  },
+  sectionAboutContent: {
+    backgroundColor: "white",
+    height: "90vh",
+  },
+  sectionSecondary: {
+    backgroundImage: "url(DSC_0349.jpeg)",
+    minHeight: "100vh",
+    minWidth: "fit-content",
+    color: "white",
+  },
+  sectionContactInfo: {
+    minHeight: "75vh",
+    backgroundColor: "rgb(20, 20, 18)",
     minWidth: "fit-content",
     color: "white",
   },
@@ -50,16 +71,43 @@ export default function HomePage() {
     <Grid container>
       <Grid
         container
-        className={`${classes.section01} ${classes.backgroundImage}`}
+        className={`${classes.sectionMain} ${classes.backgroundImage}`}
         alignItems="center"
       >
-        <BGOverlay alignItems="center" layerColor="rgba(20, 20, 20, 0.7)">
-            <Grid item xs={12}>
-              <Typography variant="h1" align="center" color="inherit">
-                Yellov
-              </Typography>
-            </Grid>
+        <BGOverlay alignItems="center" layerColor="rgba(40, 40, 40, 0.3)">
+          <Grid item xs={12}>
+            <Typography variant="h1" align="center" color="inherit">
+              Yellov
+            </Typography>
+          </Grid>
         </BGOverlay>
+      </Grid>
+      {
+        // TODO: CAROUSEL HERE FOR CONTENT
+        // ? maybe change the background image or colors with content too
+      }
+      <Grid
+        container
+        className={`${classes.sectionAbout} ${classes.backgroundImage}`}
+        // justify="center"
+      >
+        <Grid item xs={1} md={1}></Grid>
+        <Grid item xs={10} sm={7} md={7} lg={5} xl={4}>
+          <Grid container height="50vh" className={classes.sectionAboutContent}>
+            Hello
+          </Grid>
+        </Grid>
+        <Grid item md={4}></Grid>
+      </Grid>
+      <Grid
+        container
+        className={`${classes.sectionSecondary} ${classes.backgroundImage}`}
+      ></Grid>
+      <Grid
+        container
+        className={`${classes.sectionContactInfo}`}
+      >
+        Contact Info
       </Grid>
     </Grid>
   );
