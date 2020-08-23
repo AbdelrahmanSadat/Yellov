@@ -104,14 +104,11 @@ export default function HomePage() {
           </Grid>
         </BGOverlay>
       </Grid>
-      {
-        // TODO: CAROUSEL HERE FOR CONTENT
-        // ? maybe change the background image or colors with content too
-      }
 
       <Grid container className={classes.carouselContainer}>
         <Carousel
           infiniteLoop
+          showStatus={false}
           renderThumbs={() => undefined}
           className={classes.carouselCustom}
         >
