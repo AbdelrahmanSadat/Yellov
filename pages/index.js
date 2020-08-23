@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { Carousel } from "react-responsive-carousel";
+
 import BGOverlay from "../components/BGOverlay";
 
 import {
@@ -28,6 +30,9 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // * CSS Styles Here
 const useStyles = makeStyles((theme) => ({
+  mainWrapper: {
+    minWidth: "fit-content",
+  },
   backgroundImage: {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -37,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
   sectionMain: {
     backgroundImage: "url(womanLaptopBeach-lg.jpg)",
     minHeight: "100vh",
-    minWidth: "fit-content",
     color: "white",
   },
   sectionAbout: {
@@ -61,6 +65,24 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "fit-content",
     color: "white",
   },
+  carouselContainer: {
+    // minHeight: "100vh"
+  },
+  carouselCustom: {
+    width: "100%",
+  },
+  carouselSlide: {
+    minHeight: "100vh",
+  },
+  carouselSlide01: {
+    backgroundColor: "rgb(255, 231, 15)",
+  },
+  carouselSlide02: {
+    backgroundColor: "rgb(51, 124, 242)",
+  },
+  carouselSlide03: {
+    backgroundColor: "rgb(237, 21, 21)",
+  },
 }));
 
 export default function HomePage() {
@@ -68,7 +90,7 @@ export default function HomePage() {
   const theme = useTheme();
 
   return (
-    <Grid container>
+    <Grid container className={classes.mainWrapper}>
       <Grid
         container
         className={`${classes.sectionMain} ${classes.backgroundImage}`}
@@ -86,7 +108,34 @@ export default function HomePage() {
         // TODO: CAROUSEL HERE FOR CONTENT
         // ? maybe change the background image or colors with content too
       }
-      <Grid
+
+      <Grid container className={classes.carouselContainer}>
+        <Carousel
+          infiniteLoop
+          renderThumbs={() => undefined}
+          className={classes.carouselCustom}
+        >
+          <Grid
+            container
+            className={`${classes.carouselSlide} ${classes.carouselSlide01}`}
+          >
+            Content of Slide 01
+          </Grid>
+          <Grid
+            container
+            className={`${classes.carouselSlide} ${classes.carouselSlide02}`}
+          >
+            Content of Slide 02
+          </Grid>
+          <Grid
+            container
+            className={`${classes.carouselSlide} ${classes.carouselSlide03}`}
+          >
+            Content of Slide 3
+          </Grid>
+        </Carousel>
+      </Grid>
+      {/* <Grid
         container
         className={`${classes.sectionAbout} ${classes.backgroundImage}`}
         // justify="center"
@@ -99,14 +148,13 @@ export default function HomePage() {
         </Grid>
         <Grid item md={4}></Grid>
       </Grid>
+      
+       */}
       <Grid
         container
         className={`${classes.sectionSecondary} ${classes.backgroundImage}`}
       ></Grid>
-      <Grid
-        container
-        className={`${classes.sectionContactInfo}`}
-      >
+      <Grid container className={`${classes.sectionContactInfo}`}>
         Contact Info
       </Grid>
     </Grid>
