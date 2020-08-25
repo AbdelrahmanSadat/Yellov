@@ -1,3 +1,6 @@
+// TODO: refactor lists (nav menu, carousel items, ...)
+// TODO: content using i18n or from a static file
+
 import React, { useEffect, useState } from "react";
 
 import { Carousel } from "react-responsive-carousel";
@@ -12,10 +15,20 @@ import {
   fontWeight,
 } from "@material-ui/system";
 
-import { Grid, Typography } from "@material-ui/core";
+import {
+  Backdrop,
+  CircularProgress,
+  Grid,
+  IconButton,
+  List,
+  ListItem,
+  Typography,
+} from "@material-ui/core";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+
+import { Menu as MenuIcon } from "@material-ui/icons";
 
 // import Flags from "country-flag-icons/react/3x2";
 
@@ -38,6 +51,20 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
+  },
+  emboldened: {
+    fontWeight: "700"
+  },
+  backdrop: {
+    // backgroundColor: "pink",
+    zIndex: theme.zIndex.drawer + 1,
+  },
+  menuButton: {
+    position: "fixed",
+    right: "1rem",
+    top: "1rem",
+    color: "white",
+    zIndex: theme.zIndex.drawer + 1,
   },
   sectionMain: {
     backgroundImage: "url(womanLaptopBeach-lg.jpg)",
@@ -88,9 +115,57 @@ const useStyles = makeStyles((theme) => ({
 export default function HomePage() {
   const classes = useStyles();
   const theme = useTheme();
+  const [state, setState] = React.useState({
+    backdropOpen: false,
+  });
 
   return (
     <Grid container className={classes.mainWrapper}>
+      <IconButton
+        color="inherit"
+        className={classes.menuButton}
+        onClick={() =>
+          setState({ ...state, backdropOpen: !state.backdropOpen })
+        }
+      >
+        <MenuIcon />
+      </IconButton>
+      <Backdrop
+        open={state.backdropOpen}
+        className={classes.backdrop}
+        onClick={() =>
+          setState({ ...setState, backdropOpen: !state.backdropOpen })
+        }
+      >
+        <Grid
+          container
+          justify="center"
+          alignItems="center"
+          alignContent="center"
+        >
+          <List>
+            <ListItem>
+              <Typography
+                variant="h1"
+                align="center"
+                color="inherit"
+              >
+                Yellov
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant="h1" align="center" color="inherit">
+                Yellov
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant="h1" align="center" color="inherit">
+                Yellov
+              </Typography>
+            </ListItem>
+          </List>
+        </Grid>
+      </Backdrop>
       <Grid
         container
         className={`${classes.sectionMain} ${classes.backgroundImage}`}
@@ -109,6 +184,7 @@ export default function HomePage() {
         <Carousel
           infiniteLoop
           showStatus={false}
+          swipeable={false}
           renderThumbs={() => undefined}
           className={classes.carouselCustom}
         >
@@ -132,21 +208,6 @@ export default function HomePage() {
           </Grid>
         </Carousel>
       </Grid>
-      {/* <Grid
-        container
-        className={`${classes.sectionAbout} ${classes.backgroundImage}`}
-        // justify="center"
-      >
-        <Grid item xs={1} md={1}></Grid>
-        <Grid item xs={10} sm={7} md={7} lg={5} xl={4}>
-          <Grid container height="50vh" className={classes.sectionAboutContent}>
-            Hello
-          </Grid>
-        </Grid>
-        <Grid item md={4}></Grid>
-      </Grid>
-      
-       */}
       <Grid
         container
         className={`${classes.sectionSecondary} ${classes.backgroundImage}`}
