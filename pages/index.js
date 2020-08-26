@@ -78,17 +78,13 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "2rem",
     paddingBottom: "2rem",
   },
-  sectionAboutContent: {
-    backgroundColor: "white",
-    height: "90vh",
-  },
   sectionSecondary: {
     backgroundImage: "url(DSC_0349.jpeg)",
     minHeight: "100vh",
     color: "white",
   },
   sectionContactInfo: {
-    minHeight: "75vh",
+    minHeight: "100vh",
     backgroundColor: "rgb(20, 20, 18)",
     color: "white",
   },
@@ -101,11 +97,11 @@ const useStyles = makeStyles((theme) => ({
   carouselSlide: {
     minHeight: "100vh",
   },
-  carouselSlideTitle: {
+  sectionTitle: {
     padding: "2rem",
     paddingBottom: "0",
   },
-  carouselSlideContent: {
+  sectionContent: {
     padding: "2rem",
     paddingTop: "0",
   },
@@ -198,12 +194,12 @@ export default function HomePage() {
             alignContent="flex-start"
           >
             {/* TODO: padding and font size responsive */}
-            <Grid item xs={12} className={classes.carouselSlideTitle}>
+            <Grid item xs={12} className={classes.sectionTitle}>
               <Typography variant="h2" align="left" gutterBottom>
                 About Us
               </Typography>
             </Grid>
-            <Grid item sm={12} md={6} className={classes.carouselSlideContent}>
+            <Grid item sm={12} md={6} className={classes.sectionContent}>
               <Typography variant="h5" align="left">
                 Exercitation deserunt exercitation ullamco reprehenderit sint
                 dolore est officia dolore laboris. Esse fugiat nostrud
@@ -235,7 +231,26 @@ export default function HomePage() {
         className={`${classes.sectionSecondary} ${classes.backgroundImage}`}
       ></Grid>
       <Grid container className={`${classes.sectionContactInfo}`}>
-        Contact Info
+        <Grid item xs={12} className={classes.sectionTitle}>
+          <Typography variant="h2" align="left" gutterBottom>
+            Contact Us
+          </Typography>
+        </Grid>
+        <Grid item sm={12} className={classes.sectionContent}>
+          <Typography variant="h3" align="left">
+            Facebook
+          </Typography>
+        </Grid>
+        <Grid item sm={12} className={classes.sectionContent}>
+          <Typography variant="h3" align="left">
+            Instagram
+          </Typography>
+        </Grid>
+        <Grid item sm={12} className={classes.sectionContent}>
+          <Typography variant="h3" align="left">
+            Email
+          </Typography>
+        </Grid>
       </Grid>
     </Grid>
   );
