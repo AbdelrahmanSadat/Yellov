@@ -44,7 +44,9 @@ import { Menu as MenuIcon } from "@material-ui/icons";
 // * CSS Styles Here
 const useStyles = makeStyles((theme) => ({
   mainWrapper: {
-    minWidth: "fit-content",
+    ["@media (max-width:319px)"]: {
+      minWidth: "fit-content",
+    },
   },
   backgroundImage: {
     backgroundPosition: "center",
@@ -53,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundAttachment: "fixed",
   },
   emboldened: {
-    fontWeight: "700"
+    fontWeight: "700",
   },
   backdrop: {
     // backgroundColor: "pink",
@@ -83,13 +85,11 @@ const useStyles = makeStyles((theme) => ({
   sectionSecondary: {
     backgroundImage: "url(DSC_0349.jpeg)",
     minHeight: "100vh",
-    minWidth: "fit-content",
     color: "white",
   },
   sectionContactInfo: {
     minHeight: "75vh",
     backgroundColor: "rgb(20, 20, 18)",
-    minWidth: "fit-content",
     color: "white",
   },
   carouselContainer: {
@@ -100,6 +100,14 @@ const useStyles = makeStyles((theme) => ({
   },
   carouselSlide: {
     minHeight: "100vh",
+  },
+  carouselSlideTitle: {
+    padding: "2rem",
+    paddingBottom: "0",
+  },
+  carouselSlideContent: {
+    padding: "2rem",
+    paddingTop: "0",
   },
   carouselSlide01: {
     backgroundColor: "rgb(255, 231, 15)",
@@ -145,11 +153,7 @@ export default function HomePage() {
         >
           <List>
             <ListItem>
-              <Typography
-                variant="h1"
-                align="center"
-                color="inherit"
-              >
+              <Typography variant="h1" align="center" color="inherit">
                 Yellov
               </Typography>
             </ListItem>
@@ -191,21 +195,39 @@ export default function HomePage() {
           <Grid
             container
             className={`${classes.carouselSlide} ${classes.carouselSlide01}`}
+            alignContent="flex-start"
           >
-            Content of Slide 01
+            {/* TODO: padding and font size responsive */}
+            <Grid item xs={12} className={classes.carouselSlideTitle}>
+              <Typography variant="h2" align="left" gutterBottom>
+                About Us
+              </Typography>
+            </Grid>
+            <Grid item sm={12} md={6} className={classes.carouselSlideContent}>
+              <Typography variant="h5" align="left">
+                Exercitation deserunt exercitation ullamco reprehenderit sint
+                dolore est officia dolore laboris. Esse fugiat nostrud
+                adipisicing pariatur. Occaecat sunt reprehenderit occaecat ad
+                qui tempor dolor enim elit et officia velit. Ex eu tempor est
+                eu. Nisi elit mollit eu cillum excepteur minim. Nulla eiusmod
+                fugiat nisi eu esse exercitation occaecat occaecat ipsum.
+                Deserunt Lorem Lorem eiusmod qui veniam. Enim id anim minim
+                Lorem in ex irure occaecat et. Ea aliquip aliquip dolor ullamco
+                proident deserunt sit quis ullamco culpa ipsum excepteur. Nulla
+                aliqua irure dolor nostrud. Magna esse Lorem proident minim
+                aliqua est in ex quis proident. Dolore quis incididunt nulla
+                laboris fugiat.
+              </Typography>
+            </Grid>
           </Grid>
           <Grid
             container
             className={`${classes.carouselSlide} ${classes.carouselSlide02}`}
-          >
-            Content of Slide 02
-          </Grid>
+          ></Grid>
           <Grid
             container
             className={`${classes.carouselSlide} ${classes.carouselSlide03}`}
-          >
-            Content of Slide 3
-          </Grid>
+          ></Grid>
         </Carousel>
       </Grid>
       <Grid
