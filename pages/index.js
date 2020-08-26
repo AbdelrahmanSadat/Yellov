@@ -17,6 +17,7 @@ import {
 
 import {
   Backdrop,
+  Button,
   CircularProgress,
   Grid,
   IconButton,
@@ -32,14 +33,29 @@ import { Menu as MenuIcon } from "@material-ui/icons";
 
 // import Flags from "country-flag-icons/react/3x2";
 
-// import {
-//   Link as ScrollLink,
-//   Element,
-//   Events,
-//   animateScroll as scroll,
-//   scrollSpy,
-//   scroller,
-// } from "react-scroll";
+import {
+  Link as ScrollLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
+
+const navButtonData = [
+  {
+    text: "Home",
+    to: "home",
+  },
+  {
+    text: "About Us",
+    to: "aboutUs",
+  },
+  {
+    text: "Contact Us",
+    to: "contactUs",
+  },
+];
 
 // * CSS Styles Here
 const useStyles = makeStyles((theme) => ({
@@ -56,6 +72,9 @@ const useStyles = makeStyles((theme) => ({
   },
   emboldened: {
     fontWeight: "700",
+  },
+  pointer: {
+    cursor: "pointer",
   },
   backdrop: {
     // backgroundColor: "pink",
@@ -148,26 +167,53 @@ export default function HomePage() {
           alignContent="center"
         >
           <List>
-            <ListItem>
-              <Typography variant="h1" align="center" color="inherit">
-                Yellov
-              </Typography>
-            </ListItem>
-            <ListItem>
-              <Typography variant="h1" align="center" color="inherit">
-                Yellov
-              </Typography>
-            </ListItem>
-            <ListItem>
-              <Typography variant="h1" align="center" color="inherit">
-                Yellov
-              </Typography>
-            </ListItem>
+            {navButtonData.map((navButton, index) => {
+              return (
+                <ListItem key={index}>
+                  <Grid container justify="center">
+                    <ScrollLink
+                      className={classes.navbarScrollLink}
+                      activeClass={classes.activeNavbarScrollLink}
+                      to={navButton.to}
+                      spy
+                      smooth
+                      hashSpy
+                      duration={700}
+                      // delay={1000}
+                      isDynamic={true}
+                    >
+                      <Typography variant="h1" align="center" color="inherit" className={classes.pointer}>
+                        {navButton.text}
+                      </Typography>
+                    </ScrollLink>
+                  </Grid>
+                </ListItem>
+              );
+            })}
           </List>
+
+          {/* <List>
+            <ListItem>
+              <Typography variant="h1" align="center" color="inherit">
+                Yellov
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant="h1" align="center" color="inherit">
+                Yellov
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant="h1" align="center" color="inherit">
+                Yellov
+              </Typography>
+            </ListItem>
+          </List> */}
         </Grid>
       </Backdrop>
       <Grid
         container
+        name="home"
         className={`${classes.sectionMain} ${classes.backgroundImage}`}
         alignItems="center"
       >
@@ -180,7 +226,7 @@ export default function HomePage() {
         </BGOverlay>
       </Grid>
 
-      <Grid container className={classes.carouselContainer}>
+      <Grid container name="aboutUs" className={classes.carouselContainer}>
         <Carousel
           infiniteLoop
           showStatus={false}
@@ -230,7 +276,11 @@ export default function HomePage() {
         container
         className={`${classes.sectionSecondary} ${classes.backgroundImage}`}
       ></Grid>
-      <Grid container className={`${classes.sectionContactInfo}`}>
+      <Grid
+        container
+        name="contactUs"
+        className={`${classes.sectionContactInfo}`}
+      >
         <Grid item xs={12} className={classes.sectionTitle}>
           <Typography variant="h2" align="left" gutterBottom>
             Contact Us
