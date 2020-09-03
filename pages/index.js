@@ -1,5 +1,7 @@
-// TODO: refactor lists (nav menu, carousel items, ...)
+// TODO: refactor lists (carousel items, ...)
 // TODO: content using i18n or from a static file
+
+// TODO: Add video to content
 
 import React, { useEffect, useState } from "react";
 
@@ -23,6 +25,7 @@ import {
   IconButton,
   List,
   ListItem,
+  Slide,
   Typography,
 } from "@material-ui/core";
 
@@ -32,6 +35,8 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Menu as MenuIcon } from "@material-ui/icons";
 
 // import Flags from "country-flag-icons/react/3x2";
+
+import Fade from "react-reveal/Fade";
 
 import {
   Link as ScrollLink,
@@ -169,25 +174,36 @@ export default function HomePage() {
           <List>
             {navButtonData.map((navButton, index) => {
               return (
-                <ListItem key={index}>
-                  <Grid container justify="center">
-                    <ScrollLink
-                      className={classes.navbarScrollLink}
-                      activeClass={classes.activeNavbarScrollLink}
-                      to={navButton.to}
-                      spy
-                      smooth
-                      hashSpy
-                      duration={700}
-                      // delay={1000}
-                      isDynamic={true}
-                    >
-                      <Typography variant="h1" align="center" color="inherit" className={classes.pointer}>
-                        {navButton.text}
-                      </Typography>
-                    </ScrollLink>
-                  </Grid>
-                </ListItem>
+                <Slide
+                  in={state.backdropOpen}
+                  direction={index % 2 == 0 ? "left" : "right"}
+                  timeout={1000}
+                >
+                  <ListItem key={index}>
+                    <Grid container justify="center">
+                      <ScrollLink
+                        className={classes.navbarScrollLink}
+                        activeClass={classes.activeNavbarScrollLink}
+                        to={navButton.to}
+                        spy
+                        smooth
+                        hashSpy
+                        duration={700}
+                        // delay={1000}
+                        isDynamic={true}
+                      >
+                        <Typography
+                          variant="h1"
+                          align="center"
+                          color="inherit"
+                          className={classes.pointer}
+                        >
+                          {navButton.text}
+                        </Typography>
+                      </ScrollLink>
+                    </Grid>
+                  </ListItem>
+                </Slide>
               );
             })}
           </List>
@@ -219,9 +235,11 @@ export default function HomePage() {
       >
         <BGOverlay alignItems="center" layerColor="rgba(40, 40, 40, 0.3)">
           <Grid item xs={12}>
-            <Typography variant="h1" align="center" color="inherit">
-              Yellov
-            </Typography>
+            <Fade>
+              <Typography variant="h1" align="center" color="inherit">
+                Yellov
+              </Typography>
+            </Fade>
           </Grid>
         </BGOverlay>
       </Grid>
@@ -241,25 +259,29 @@ export default function HomePage() {
           >
             {/* TODO: padding and font size responsive */}
             <Grid item xs={12} className={classes.sectionTitle}>
-              <Typography variant="h2" align="left" gutterBottom>
-                About Us
-              </Typography>
+              <Fade>
+                <Typography variant="h2" align="left" gutterBottom>
+                  About Us
+                </Typography>
+              </Fade>
             </Grid>
             <Grid item sm={12} md={6} className={classes.sectionContent}>
-              <Typography variant="h5" align="left">
-                Exercitation deserunt exercitation ullamco reprehenderit sint
-                dolore est officia dolore laboris. Esse fugiat nostrud
-                adipisicing pariatur. Occaecat sunt reprehenderit occaecat ad
-                qui tempor dolor enim elit et officia velit. Ex eu tempor est
-                eu. Nisi elit mollit eu cillum excepteur minim. Nulla eiusmod
-                fugiat nisi eu esse exercitation occaecat occaecat ipsum.
-                Deserunt Lorem Lorem eiusmod qui veniam. Enim id anim minim
-                Lorem in ex irure occaecat et. Ea aliquip aliquip dolor ullamco
-                proident deserunt sit quis ullamco culpa ipsum excepteur. Nulla
-                aliqua irure dolor nostrud. Magna esse Lorem proident minim
-                aliqua est in ex quis proident. Dolore quis incididunt nulla
-                laboris fugiat.
-              </Typography>
+              <Fade>
+                <Typography variant="h5" align="left">
+                  Exercitation deserunt exercitation ullamco reprehenderit sint
+                  dolore est officia dolore laboris. Esse fugiat nostrud
+                  adipisicing pariatur. Occaecat sunt reprehenderit occaecat ad
+                  qui tempor dolor enim elit et officia velit. Ex eu tempor est
+                  eu. Nisi elit mollit eu cillum excepteur minim. Nulla eiusmod
+                  fugiat nisi eu esse exercitation occaecat occaecat ipsum.
+                  Deserunt Lorem Lorem eiusmod qui veniam. Enim id anim minim
+                  Lorem in ex irure occaecat et. Ea aliquip aliquip dolor
+                  ullamco proident deserunt sit quis ullamco culpa ipsum
+                  excepteur. Nulla aliqua irure dolor nostrud. Magna esse Lorem
+                  proident minim aliqua est in ex quis proident. Dolore quis
+                  incididunt nulla laboris fugiat.
+                </Typography>
+              </Fade>
             </Grid>
           </Grid>
           <Grid
@@ -282,24 +304,32 @@ export default function HomePage() {
         className={`${classes.sectionContactInfo}`}
       >
         <Grid item xs={12} className={classes.sectionTitle}>
-          <Typography variant="h2" align="left" gutterBottom>
-            Contact Us
-          </Typography>
+          <Fade>
+            <Typography variant="h2" align="left" gutterBottom>
+              Contact Us
+            </Typography>
+          </Fade>
         </Grid>
         <Grid item sm={12} className={classes.sectionContent}>
-          <Typography variant="h3" align="left">
-            Facebook
-          </Typography>
+          <Fade>
+            <Typography variant="h3" align="left">
+              Facebook
+            </Typography>
+          </Fade>
         </Grid>
         <Grid item sm={12} className={classes.sectionContent}>
-          <Typography variant="h3" align="left">
-            Instagram
-          </Typography>
+          <Fade>
+            <Typography variant="h3" align="left">
+              Instagram
+            </Typography>
+          </Fade>
         </Grid>
         <Grid item sm={12} className={classes.sectionContent}>
-          <Typography variant="h3" align="left">
-            Email
-          </Typography>
+          <Fade>
+            <Typography variant="h3" align="left">
+              Email
+            </Typography>
+          </Fade>
         </Grid>
       </Grid>
     </Grid>
