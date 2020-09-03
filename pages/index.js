@@ -3,6 +3,9 @@
 
 // TODO: Add video to content
 
+// TODO: Font Size Responsive Smaller on Nav and Carousel and Founder
+// TODO: Main Section BG Image
+
 import React, { useEffect, useState } from "react";
 
 import { Carousel } from "react-responsive-carousel";
@@ -21,6 +24,7 @@ import {
   Backdrop,
   Button,
   CircularProgress,
+  Divider,
   Grid,
   IconButton,
   List,
@@ -55,6 +59,10 @@ const navButtonData = [
   {
     text: "About Us",
     to: "aboutUs",
+  },
+  {
+    text: "Founder",
+    to:"secondary"
   },
   {
     text: "Contact Us",
@@ -103,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "2rem",
   },
   sectionSecondary: {
-    backgroundImage: "url(DSC_0349.jpeg)",
+    backgroundImage: "url(BassemSameh.jpg)",
     minHeight: "100vh",
     color: "white",
   },
@@ -120,6 +128,7 @@ const useStyles = makeStyles((theme) => ({
   },
   carouselSlide: {
     minHeight: "100vh",
+    height: "100%",
   },
   sectionTitle: {
     padding: "2rem",
@@ -137,6 +146,14 @@ const useStyles = makeStyles((theme) => ({
   },
   carouselSlide03: {
     backgroundColor: "rgb(237, 21, 21)",
+  },
+  carouselSlide04: {
+    backgroundColor: "rgb(250,250,250)",
+  },
+  customDivider: {
+    backgroundColor: "rgb(255, 231, 15)",
+    width: "55%",
+    height: "10px",
   },
 }));
 
@@ -178,8 +195,9 @@ export default function HomePage() {
                   in={state.backdropOpen}
                   direction={index % 2 == 0 ? "left" : "right"}
                   timeout={1000}
+                  key={index}
                 >
-                  <ListItem key={index}>
+                  <ListItem>
                     <Grid container justify="center">
                       <ScrollLink
                         className={classes.navbarScrollLink}
@@ -239,6 +257,9 @@ export default function HomePage() {
               <Typography variant="h1" align="center" color="inherit">
                 Yellov
               </Typography>
+              <Typography variant="h4" align="center" color="inherit">
+                We Make You Do What Yellove
+              </Typography>
             </Fade>
           </Grid>
         </BGOverlay>
@@ -261,25 +282,33 @@ export default function HomePage() {
             <Grid item xs={12} className={classes.sectionTitle}>
               <Fade>
                 <Typography variant="h2" align="left" gutterBottom>
-                  About Us
+                  WHAT IS YELLOV ?
                 </Typography>
               </Fade>
             </Grid>
-            <Grid item sm={12} md={6} className={classes.sectionContent}>
+            <Grid item sm={12} md={8} className={classes.sectionContent}>
               <Fade>
                 <Typography variant="h5" align="left">
-                  Exercitation deserunt exercitation ullamco reprehenderit sint
-                  dolore est officia dolore laboris. Esse fugiat nostrud
-                  adipisicing pariatur. Occaecat sunt reprehenderit occaecat ad
-                  qui tempor dolor enim elit et officia velit. Ex eu tempor est
-                  eu. Nisi elit mollit eu cillum excepteur minim. Nulla eiusmod
-                  fugiat nisi eu esse exercitation occaecat occaecat ipsum.
-                  Deserunt Lorem Lorem eiusmod qui veniam. Enim id anim minim
-                  Lorem in ex irure occaecat et. Ea aliquip aliquip dolor
-                  ullamco proident deserunt sit quis ullamco culpa ipsum
-                  excepteur. Nulla aliqua irure dolor nostrud. Magna esse Lorem
-                  proident minim aliqua est in ex quis proident. Dolore quis
-                  incididunt nulla laboris fugiat.
+                  YELLOV is a commune; which is a community of people who love
+                  Sinai and want more people to experience it from a local’s eye
+                  and dig deeper into its endless magic. <br />
+                  Our Brand name is a combination of how we see Sinai on the map
+                  and how much love it holds as a land. Yellow, V, and LOVE. So
+                  We are YELLOV.
+                  <br />
+                  YELLOV will offer an Art Residency program for Videographers,
+                  Graphic Designers, Content Creators, and Web developers who
+                  will come help us make more people see Sinai from an insider’s
+                  eye. As most foreigners crave the simple life that’s here.
+                  <br />
+                  We worked in Dahab before with several businesses as social
+                  media consultants. It was a complete experience because We
+                  used to moderate, Shoot, Edit, write captions and launch ad
+                  campaigns. We had 5 clients that made us grow for 4 months
+                  then the summer ended and the adventure was over. It was a
+                  great experience that We want to make people try. So Come on
+                  and join us. See you in the land of love and magic, See you in
+                  Sinai.
                 </Typography>
               </Fade>
             </Grid>
@@ -287,17 +316,165 @@ export default function HomePage() {
           <Grid
             container
             className={`${classes.carouselSlide} ${classes.carouselSlide02}`}
-          ></Grid>
+            alignContent="flex-start"
+          >
+            <Grid item xs={12} className={classes.sectionTitle}>
+              <Fade>
+                <Typography variant="h2" align="left" gutterBottom>
+                  HOW IS YELLOV SUSTAINABLE ?
+                </Typography>
+              </Fade>
+            </Grid>
+            <Grid item sm={12} md={8} className={classes.sectionContent}>
+              <Fade>
+                <Typography variant="h5" align="left">
+                  YELLOV has a wide portfolio of clients starting from a coach
+                  who wants to be a YouTuber to Big names such as Bubbles Dive
+                  center, Everyday Cafe, and Skyrock. We sell these services to
+                  our clients and provide our talents with a pleasurable
+                  adventure. Which adds to you and us.
+                  <br />
+                  We take our rig and tools seriously. If you’re handy or you
+                  love playing with lights you came to the right place. We have
+                  a ruined LCD TV which works as a perfect softbox, We use LED
+                  bulbs sometimes, Tungsten bulbs. We’re super innovative and
+                  resourceful when it comes to our equipment. Because Sinai has
+                  a different nature and We don’t want our business to have a
+                  high carbon footprint
+                  <br />
+                  We have our studio with 2 workstations ready with all sound
+                  and video equipment.
+                </Typography>
+              </Fade>
+            </Grid>
+          </Grid>
           <Grid
             container
             className={`${classes.carouselSlide} ${classes.carouselSlide03}`}
-          ></Grid>
+            alignContent="flex-start"
+          >
+            <Grid item xs={12} className={classes.sectionTitle}>
+              <Fade>
+                <Typography variant="h2" align="left" gutterBottom>
+                  YELLOV PROPERTIES
+                </Typography>
+              </Fade>
+            </Grid>
+            <Grid item sm={12} md={8} className={classes.sectionContent}>
+              <Fade>
+                <Typography variant="h5" align="left">
+                  Yellov has some properties and has understanding agreements
+                  with other properties to facilitate our business needs
+                  <br />
+                  1- Studio: Al Chillaya is our studio, main house. It’s a
+                  studio where we edit, color, and work on our projects. We have
+                  a small cinema, screens, light equipment and we’re working on
+                  making it more equipped as we go.
+                  <br />
+                  2- Residency: Bob 55 is an art camp in Nuweiba just by the
+                  port. A life-changing experience that has a perfect mix
+                  between Bedouin heritage and Street art. A place where
+                  everything is for 55 where it's much simpler. We have 8
+                  Air-conditioned rooms with private bathrooms to accommodate
+                  our talents and artists.
+                  <br />
+                  3- Workshop: Wala Haja workshop: We have an understanding
+                  statement with the Wala Haja workshop to bring in as many
+                  students as we can. This workshop offers carpentry courses,
+                  clay building, and wood carving courses.
+                  <br />
+                </Typography>
+              </Fade>
+            </Grid>
+          </Grid>
+          <Grid
+            container
+            className={`${classes.carouselSlide} ${classes.carouselSlide04}`}
+            alignContent="flex-start"
+          >
+            <Grid item xs={12} className={classes.sectionTitle}>
+              <Fade>
+                <Typography variant="h2" align="left" gutterBottom>
+                  YELLOV CREATIVE TRAVEL PROGRAMS
+                </Typography>
+              </Fade>
+            </Grid>
+            <Grid item sm={12} md={8} className={classes.sectionContent}>
+              <Fade>
+                <Typography variant="h5" align="left">
+                  1- YELLOV Experience: The program will include a week of
+                  Accommodation and Food provided by YELLOV to our talents. The
+                  talent is required to work for 4 days on projects from our
+                  wide portfolio of clients and takes 3 days off. So basically,
+                  You’ll add a project or two to your portfolio and spend 3 days
+                  vacation and 4 days that include a maximum of 7 working hours.
+                  <br />
+                  <br />
+                  2- YELLOV Work N’ Run: The program will include Accommodation
+                  and food for your whole stay, but you’ll stay only when we’re
+                  shooting/ working. It will be 2-4 days depending on the
+                  project size. Also, this is a paid program, salary is
+                  negotiated according to the project you’ll work on
+                  <br />
+                  <br />
+                  3- YELLOV Adventure: People have hobbies, sometimes these
+                  hobbies become an obsession If you want to do Kitesurfing,
+                  Diving, Carpentry, Clay, Swimming, Freediving, or Rock
+                  Climbing course. YELLOV will offer you the course, free of
+                  charge along with food for the whole week or a 15% discount on
+                  your accommodation
+                  <br />
+                  <br />
+                  So, If you’ve got what it takes please send us your Portfolio
+                  and talk to us about your relationship with Sinai? When did it
+                  start? How do you think you can make Sinai a global
+                  attraction? Which program would you prefer?
+                  <br />
+                  <br />
+                </Typography>
+              </Fade>
+            </Grid>
+          </Grid>
         </Carousel>
       </Grid>
       <Grid
         container
         className={`${classes.sectionSecondary} ${classes.backgroundImage}`}
-      ></Grid>
+        name="secondary"
+      >
+        <BGOverlay alignContent="flex-start">
+          <Grid item xs={12} className={classes.sectionTitle}>
+            <Fade>
+              <Typography variant="h2" align="left" gutterBottom>
+                <b>Bassem Sameh</b>, Founder
+                <Divider className={classes.customDivider}></Divider>
+              </Typography>
+            </Fade>
+          </Grid>
+          <Grid item sm={12} md={8} className={classes.sectionContent}>
+            <Fade>
+              <Typography variant="h5" align="left">
+                Bassem is a producer/ event planner/ copywriter/editor. He
+                worked as a shisha boy in 2 different countries. He is currently
+                learning music production to make music for his videos.
+                <br />
+                He started as an Event planner since he was 17 years old, Hosted
+                the biggest double concert in Alex in 2013 for Mashrou Leila
+                when he was only 19. He worked with the likes of Autostrad,
+                Jadal, Yasmine Hamdan, El Far3i, 47 Soul, El Morabba3, …etc.
+                <br />
+                He jumped to digital media content and advertising in 2014 and
+                he worked in this career with various agencies such as FP7/ CAI
+                , Nimblebot, Monkeys In Tuxedos. Worked on projects for
+                Mcdonald’s, Nestle, Redbull, and others. He produces as well. He
+                worked as an assistant producer at Hama Film Productions on
+                several ads then I produced a 2 copy TV ad for Vitrac with
+                Monkeys in Tuxedos.
+              </Typography>
+            </Fade>
+          </Grid>
+        </BGOverlay>
+      </Grid>
       <Grid
         container
         name="contactUs"
