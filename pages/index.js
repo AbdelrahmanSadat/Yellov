@@ -134,7 +134,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   yellovMainLogo: {
-    backgroundImage: "url(/logoCropped.png)",
+    backgroundImage: "url(/LogoCropped.png)",
     height: "10rem",
     width: "10rem",
     backgroundPosition: "center",
