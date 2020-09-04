@@ -116,6 +116,10 @@ const useStyles = makeStyles((theme) => ({
   },
   navText: {
     color: "white",
+    fontWeight: 500,
+    "&:hover": {
+      color: "rgb(255, 210, 15)",
+    },
   },
   menuButton: {
     position: "fixed",
