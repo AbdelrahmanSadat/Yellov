@@ -6,6 +6,8 @@
 // TODO: Font Size Responsive Smaller on Nav and Carousel and Founder
 // TODO: Main Section BG Image
 
+// TODO: Nav items on hover, animate (show underline?)
+
 import React, { useEffect, useState } from "react";
 
 import { Carousel } from "react-responsive-carousel";
@@ -27,8 +29,10 @@ import {
   Divider,
   Grid,
   IconButton,
+  Link as MaterialLink,
   List,
   ListItem,
+  ListItemIcon,
   Slide,
   Typography,
 } from "@material-ui/core";
@@ -36,7 +40,22 @@ import {
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-import { Menu as MenuIcon } from "@material-ui/icons";
+import {
+  Menu as MenuIcon,
+  Facebook as FacebookIcon,
+  Instagram as InstagramIcon,
+  Twitter as TwitterIcon,
+  Mail as MailIcon,
+  Phone as PhoneIcon,
+  PhoneAndroid as PhoneAndroidIcon,
+  CameraAlt as CameraAltIcon,
+  VideoLibrary as VideoLibraryIcon,
+  Spellcheck as SpellcheckIcon,
+  YouTube as YouTubeIcon,
+  Dvr as DvrIcon,
+  Web as WebIcon,
+  CameraAlt
+} from "@material-ui/icons";
 
 // import Flags from "country-flag-icons/react/3x2";
 
@@ -62,10 +81,10 @@ const navButtonData = [
   },
   {
     text: "Founder",
-    to:"secondary"
+    to: "secondary",
   },
   {
-    text: "Contact Us",
+    text: "Services & Contact",
     to: "contactUs",
   },
 ];
@@ -93,6 +112,9 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: "pink",
     zIndex: theme.zIndex.drawer + 1,
   },
+  contactUsIconsFill: {
+    fill: "white",
+  },
   menuButton: {
     position: "fixed",
     right: "1rem",
@@ -116,9 +138,13 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   sectionContactInfo: {
-    minHeight: "100vh",
+    // minHeight: "100vh",
     backgroundColor: "rgb(20, 20, 18)",
     color: "white",
+    ["@media (min-width:600px)"]: {
+      // show only on 960px or greater
+      fontSize: "2rem",
+    },
   },
   carouselContainer: {
     // minHeight: "100vh"
@@ -272,6 +298,7 @@ export default function HomePage() {
           swipeable={false}
           renderThumbs={() => undefined}
           className={classes.carouselCustom}
+          transitionTime={1000}
         >
           <Grid
             container
@@ -366,10 +393,12 @@ export default function HomePage() {
                   Yellov has some properties and has understanding agreements
                   with other properties to facilitate our business needs
                   <br />
+                  <br />
                   1- Studio: Al Chillaya is our studio, main house. It’s a
                   studio where we edit, color, and work on our projects. We have
                   a small cinema, screens, light equipment and we’re working on
                   making it more equipped as we go.
+                  <br />
                   <br />
                   2- Residency: Bob 55 is an art camp in Nuweiba just by the
                   port. A life-changing experience that has a perfect mix
@@ -377,6 +406,7 @@ export default function HomePage() {
                   everything is for 55 where it's much simpler. We have 8
                   Air-conditioned rooms with private bathrooms to accommodate
                   our talents and artists.
+                  <br />
                   <br />
                   3- Workshop: Wala Haja workshop: We have an understanding
                   statement with the Wala Haja workshop to bring in as many
@@ -479,34 +509,146 @@ export default function HomePage() {
         container
         name="contactUs"
         className={`${classes.sectionContactInfo}`}
+        alignContent="flex-start"
       >
-        <Grid item xs={12} className={classes.sectionTitle}>
+        <Grid item xs={12} md={6}>
           <Fade>
-            <Typography variant="h2" align="left" gutterBottom>
+            <Typography
+              className={classes.sectionTitle}
+              variant="h2"
+              align="left"
+              gutterBottom
+            >
+              Our Services
+            </Typography>
+          </Fade>
+          <Fade>
+            <List>
+              <ListItem>
+                <ListItemIcon>
+                  <CameraAltIcon
+                    fontSize="large"
+                    className={classes.contactUsIconsFill}
+                  />
+                </ListItemIcon>
+                Photoshoots
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <SpellcheckIcon
+                    fontSize="large"
+                    className={classes.contactUsIconsFill}
+                  />
+                </ListItemIcon>
+                Copywriting, PR Letters, Content Creation
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <VideoLibraryIcon
+                    fontSize="large"
+                    className={classes.contactUsIconsFill}
+                  />
+                </ListItemIcon>
+                Video Production, Editing, Color Correction
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <YouTubeIcon
+                    fontSize="large"
+                    className={classes.contactUsIconsFill}
+                  />
+                </ListItemIcon>
+                Youtube Channel Managment and Monetization
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <DvrIcon
+                    fontSize="large"
+                    className={classes.contactUsIconsFill}
+                  />
+                </ListItemIcon>
+                Digital Media Managment
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <WebIcon
+                    fontSize="large"
+                    className={classes.contactUsIconsFill}
+                  />
+                </ListItemIcon>
+                Web Development
+              </ListItem>
+            </List>
+          </Fade>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Fade>
+            <Typography
+              className={classes.sectionTitle}
+              variant="h2"
+              align="left"
+              gutterBottom
+            >
               Contact Us
             </Typography>
           </Fade>
-        </Grid>
-        <Grid item sm={12} className={classes.sectionContent}>
-          <Fade>
-            <Typography variant="h3" align="left">
-              Facebook
-            </Typography>
-          </Fade>
-        </Grid>
-        <Grid item sm={12} className={classes.sectionContent}>
-          <Fade>
-            <Typography variant="h3" align="left">
-              Instagram
-            </Typography>
-          </Fade>
-        </Grid>
-        <Grid item sm={12} className={classes.sectionContent}>
-          <Fade>
-            <Typography variant="h3" align="left">
-              Email
-            </Typography>
-          </Fade>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <MailIcon
+                  fontSize="large"
+                  className={classes.contactUsIconsFill}
+                />
+              </ListItemIcon>
+              YellovSinai@gmail.com
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FacebookIcon
+                  fontSize="large"
+                  className={classes.contactUsIconsFill}
+                />
+              </ListItemIcon>
+              <MaterialLink
+                color="inherit"
+                href="https://www.facebook.com/YellovSinai/"
+              >
+                YellovSinai
+              </MaterialLink>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <InstagramIcon
+                  fontSize="large"
+                  className={classes.contactUsIconsFill}
+                />
+              </ListItemIcon>
+              <MaterialLink
+                color="inherit"
+                href="https://www.instagram.com/YellovSinai/"
+              >
+                @YellovSinai
+              </MaterialLink>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <PhoneIcon
+                  fontSize="large"
+                  className={classes.contactUsIconsFill}
+                />
+              </ListItemIcon>
+              <MaterialLink color="inherit">069-3643049</MaterialLink>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <PhoneAndroidIcon
+                  fontSize="large"
+                  className={classes.contactUsIconsFill}
+                />
+              </ListItemIcon>
+              <MaterialLink color="inherit">+201114476166</MaterialLink>
+            </ListItem>
+          </List>
         </Grid>
       </Grid>
     </Grid>
