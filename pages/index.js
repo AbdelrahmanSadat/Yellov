@@ -116,7 +116,6 @@ const useStyles = makeStyles((theme) => ({
   },
   navText: {
     color: "white",
-    
   },
   menuButton: {
     position: "fixed",
@@ -129,6 +128,18 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: "url(womanLaptopBeach-lg.jpg)",
     minHeight: "100vh",
     color: "white",
+  },
+  yellovMainLogo: {
+    backgroundImage: "url(/logoCropped.png)",
+    height: "10rem",
+    width: "10rem",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "contain",
+    paddingTop: 0,
+    paddingBottom: "6rem",
+    margin: "0 auto",
+    marginTop: "2rem",
   },
   sectionAbout: {
     backgroundColor: "rgb(255, 231, 15)",
@@ -268,6 +279,7 @@ export default function HomePage() {
         <BGOverlay alignItems="center" layerColor="rgba(40, 40, 40, 0.3)">
           <Grid item xs={12}>
             <Fade>
+              <Grid container className={classes.yellovMainLogo}></Grid>
               <Typography variant="h1" align="center" color="inherit">
                 Yellov
               </Typography>
@@ -612,7 +624,7 @@ export default function HomePage() {
                   className={classes.contactUsIconsFill}
                 />
               </ListItemIcon>
-              YellovSinai@gmail.com
+              <MaterialLink color="inherit">YellovSinai@gmail.com</MaterialLink>
             </ListItem>
             <ListItem>
               <ListItemIcon>
