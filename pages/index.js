@@ -54,7 +54,6 @@ import {
   YouTube as YouTubeIcon,
   Dvr as DvrIcon,
   Web as WebIcon,
-  CameraAlt
 } from "@material-ui/icons";
 
 // import Flags from "country-flag-icons/react/3x2";
@@ -114,6 +113,10 @@ const useStyles = makeStyles((theme) => ({
   },
   contactUsIconsFill: {
     fill: "white",
+  },
+  navText: {
+    color: "white",
+    
   },
   menuButton: {
     position: "fixed",
@@ -237,10 +240,13 @@ export default function HomePage() {
                         isDynamic={true}
                       >
                         <Typography
-                          variant="h1"
+                          variant={
+                            useMediaQuery(theme.breakpoints.up("md"))
+                              ? "h1"
+                              : "h2"
+                          }
                           align="center"
-                          color="inherit"
-                          className={classes.pointer}
+                          className={`${classes.pointer} ${classes.navText}`}
                         >
                           {navButton.text}
                         </Typography>
@@ -251,24 +257,6 @@ export default function HomePage() {
               );
             })}
           </List>
-
-          {/* <List>
-            <ListItem>
-              <Typography variant="h1" align="center" color="inherit">
-                Yellov
-              </Typography>
-            </ListItem>
-            <ListItem>
-              <Typography variant="h1" align="center" color="inherit">
-                Yellov
-              </Typography>
-            </ListItem>
-            <ListItem>
-              <Typography variant="h1" align="center" color="inherit">
-                Yellov
-              </Typography>
-            </ListItem>
-          </List> */}
         </Grid>
       </Backdrop>
       <Grid
@@ -308,7 +296,13 @@ export default function HomePage() {
             {/* TODO: padding and font size responsive */}
             <Grid item xs={12} className={classes.sectionTitle}>
               <Fade>
-                <Typography variant="h2" align="left" gutterBottom>
+                <Typography
+                  variant={
+                    useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
+                  }
+                  align="left"
+                  gutterBottom
+                >
                   WHAT IS YELLOV ?
                 </Typography>
               </Fade>
@@ -347,7 +341,13 @@ export default function HomePage() {
           >
             <Grid item xs={12} className={classes.sectionTitle}>
               <Fade>
-                <Typography variant="h2" align="left" gutterBottom>
+                <Typography
+                  variant={
+                    useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
+                  }
+                  align="left"
+                  gutterBottom
+                >
                   HOW IS YELLOV SUSTAINABLE ?
                 </Typography>
               </Fade>
@@ -382,7 +382,13 @@ export default function HomePage() {
           >
             <Grid item xs={12} className={classes.sectionTitle}>
               <Fade>
-                <Typography variant="h2" align="left" gutterBottom>
+                <Typography
+                  variant={
+                    useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
+                  }
+                  align="left"
+                  gutterBottom
+                >
                   YELLOV PROPERTIES
                 </Typography>
               </Fade>
@@ -424,7 +430,13 @@ export default function HomePage() {
           >
             <Grid item xs={12} className={classes.sectionTitle}>
               <Fade>
-                <Typography variant="h2" align="left" gutterBottom>
+                <Typography
+                  variant={
+                    useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
+                  }
+                  align="left"
+                  gutterBottom
+                >
                   YELLOV CREATIVE TRAVEL PROGRAMS
                 </Typography>
               </Fade>
