@@ -315,6 +315,11 @@ export default function HomePage() {
           renderThumbs={() => undefined}
           className={classes.carouselCustom}
           transitionTime={1000}
+          autoPlay
+          stopOnHover
+          swipeable
+          interval={5000}
+          swipeScrollTolerance={50}
         >
           <Grid
             container
@@ -609,7 +614,7 @@ export default function HomePage() {
                       className={classes.contactUsIconsFill}
                     />
                   </ListItemIcon>
-                  Youtube Channel Managment and Monetization
+                  Youtube Channel Management and Monetization
                 </ListItem>
                 <ListItem>
                   <ListItemIcon>
