@@ -14,7 +14,7 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
   const useStyles = makeStyles((theme) => ({
     bgOverlay: {
       // * sets a default color if there's none passed to props
-      backgroundColor: "rgba(20, 20, 20, 0.7)",
+      backgroundColor: "rgba(40, 40, 40, 0.3)",
       position: "relative",
       top: 0,
       left: 0,

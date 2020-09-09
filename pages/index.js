@@ -101,6 +101,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
   },
+  backgroundImageUnfixed: {
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  },
   emboldened: {
     fontWeight: "700",
   },
@@ -129,7 +134,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.drawer + 1,
   },
   sectionMain: {
-    backgroundImage: "url(womanLaptopBeach-lg.jpg)",
+    backgroundImage: "url(landscape03.jpeg)",
     minHeight: "100vh",
     color: "white",
   },
@@ -157,7 +162,8 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionContactInfo: {
     // minHeight: "100vh",
-    backgroundColor: "rgb(20, 20, 18)",
+    // backgroundColor: "rgb(20, 20, 18)",
+    backgroundImage: "url(landscape02.jpeg)",
     color: "white",
     ["@media (min-width:600px)"]: {
       // show only on 960px or greater
@@ -169,6 +175,7 @@ const useStyles = makeStyles((theme) => ({
   },
   carouselCustom: {
     width: "100%",
+    color: "white"
   },
   carouselSlide: {
     minHeight: "100vh",
@@ -183,16 +190,20 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "0",
   },
   carouselSlide01: {
-    backgroundColor: "rgb(255, 231, 15)",
+    backgroundImage: "url(firepit.jpeg)",
+    // backgroundColor: "rgb(242,175,24)",
   },
   carouselSlide02: {
-    backgroundColor: "rgb(51, 124, 242)",
+    backgroundImage: "url(yellovBoardCentered.webp)",
+    // backgroundColor: "rgb(246, 237, 214)",
   },
   carouselSlide03: {
-    backgroundColor: "rgb(237, 21, 21)",
+    backgroundImage: "url(workshop.jpeg)",
+    // backgroundColor: "rgb(58, 71, 91)",
   },
   carouselSlide04: {
-    backgroundColor: "rgb(250,250,250)",
+    backgroundImage: "url(boatFromBeach.jpeg)",
+    // backgroundColor: "rgb(63, 144, 157)",
   },
   customDivider: {
     backgroundColor: "rgb(255, 231, 15)",
@@ -306,192 +317,202 @@ export default function HomePage() {
         >
           <Grid
             container
-            className={`${classes.carouselSlide} ${classes.carouselSlide01}`}
+            className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide01}`}
             alignContent="flex-start"
           >
             {/* TODO: padding and font size responsive */}
-            <Grid item xs={12} className={classes.sectionTitle}>
-              <Fade>
-                <Typography
-                  variant={
-                    useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
-                  }
-                  align="left"
-                  gutterBottom
-                >
-                  WHAT IS YELLOV ?
-                </Typography>
-              </Fade>
-            </Grid>
-            <Grid item sm={12} md={8} className={classes.sectionContent}>
-              <Fade>
-                <Typography variant="h5" align="left">
-                  YELLOV is a commune; which is a community of people who love
-                  Sinai and want more people to experience it from a local’s eye
-                  and dig deeper into its endless magic. <br />
-                  Our Brand name is a combination of how we see Sinai on the map
-                  and how much love it holds as a land. Yellow, V, and LOVE. So
-                  We are YELLOV.
-                  <br />
-                  YELLOV will offer an Art Residency program for Videographers,
-                  Graphic Designers, Content Creators, and Web developers who
-                  will come help us make more people see Sinai from an insider’s
-                  eye. As most foreigners crave the simple life that’s here.
-                  <br />
-                  We worked in Dahab before with several businesses as social
-                  media consultants. It was a complete experience because We
-                  used to moderate, Shoot, Edit, write captions and launch ad
-                  campaigns. We had 5 clients that made us grow for 4 months
-                  then the summer ended and the adventure was over. It was a
-                  great experience that We want to make people try. So Come on
-                  and join us. See you in the land of love and magic, See you in
-                  Sinai.
-                </Typography>
-              </Fade>
-            </Grid>
+            <BGOverlay alignContent="flex-start">
+              <Grid item xs={12} className={classes.sectionTitle}>
+                <Fade>
+                  <Typography
+                    variant={
+                      useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
+                    }
+                    align="left"
+                    gutterBottom
+                  >
+                    WHAT IS YELLOV ?
+                  </Typography>
+                </Fade>
+              </Grid>
+              <Grid item sm={12} md={8} className={classes.sectionContent}>
+                <Fade>
+                  <Typography variant="h5" align="left">
+                    YELLOV is a commune; which is a community of people who love
+                    Sinai and want more people to experience it from a local’s
+                    eye and dig deeper into its endless magic. <br />
+                    Our Brand name is a combination of how we see Sinai on the
+                    map and how much love it holds as a land. Yellow, V, and
+                    LOVE. So We are YELLOV.
+                    <br />
+                    YELLOV will offer an Art Residency program for
+                    Videographers, Graphic Designers, Content Creators, and Web
+                    developers who will come help us make more people see Sinai
+                    from an insider’s eye. As most foreigners crave the simple
+                    life that’s here.
+                    <br />
+                    We worked in Dahab before with several businesses as social
+                    media consultants. It was a complete experience because We
+                    used to moderate, Shoot, Edit, write captions and launch ad
+                    campaigns. We had 5 clients that made us grow for 4 months
+                    then the summer ended and the adventure was over. It was a
+                    great experience that We want to make people try. So Come on
+                    and join us. See you in the land of love and magic, See you
+                    in Sinai.
+                  </Typography>
+                </Fade>
+              </Grid>
+            </BGOverlay>
           </Grid>
           <Grid
             container
-            className={`${classes.carouselSlide} ${classes.carouselSlide02}`}
+            className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide02}`}
             alignContent="flex-start"
           >
-            <Grid item xs={12} className={classes.sectionTitle}>
-              <Fade>
-                <Typography
-                  variant={
-                    useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
-                  }
-                  align="left"
-                  gutterBottom
-                >
-                  HOW IS YELLOV SUSTAINABLE ?
-                </Typography>
-              </Fade>
-            </Grid>
-            <Grid item sm={12} md={8} className={classes.sectionContent}>
-              <Fade>
-                <Typography variant="h5" align="left">
-                  YELLOV has a wide portfolio of clients starting from a coach
-                  who wants to be a YouTuber to Big names such as Bubbles Dive
-                  center, Everyday Cafe, and Skyrock. We sell these services to
-                  our clients and provide our talents with a pleasurable
-                  adventure. Which adds to you and us.
-                  <br />
-                  We take our rig and tools seriously. If you’re handy or you
-                  love playing with lights you came to the right place. We have
-                  a ruined LCD TV which works as a perfect softbox, We use LED
-                  bulbs sometimes, Tungsten bulbs. We’re super innovative and
-                  resourceful when it comes to our equipment. Because Sinai has
-                  a different nature and We don’t want our business to have a
-                  high carbon footprint
-                  <br />
-                  We have our studio with 2 workstations ready with all sound
-                  and video equipment.
-                </Typography>
-              </Fade>
-            </Grid>
+            <BGOverlay alignContent="flex-start">
+              <Grid item xs={12} className={classes.sectionTitle}>
+                <Fade>
+                  <Typography
+                    variant={
+                      useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
+                    }
+                    align="left"
+                    gutterBottom
+                  >
+                    HOW IS YELLOV SUSTAINABLE ?
+                  </Typography>
+                </Fade>
+              </Grid>
+              <Grid item sm={12} md={8} className={classes.sectionContent}>
+                <Fade>
+                  <Typography variant="h5" align="left">
+                    YELLOV has a wide portfolio of clients starting from a coach
+                    who wants to be a YouTuber to Big names such as Bubbles Dive
+                    center, Everyday Cafe, and Skyrock. We sell these services
+                    to our clients and provide our talents with a pleasurable
+                    adventure. Which adds to you and us.
+                    <br />
+                    We take our rig and tools seriously. If you’re handy or you
+                    love playing with lights you came to the right place. We
+                    have a ruined LCD TV which works as a perfect softbox, We
+                    use LED bulbs sometimes, Tungsten bulbs. We’re super
+                    innovative and resourceful when it comes to our equipment.
+                    Because Sinai has a different nature and We don’t want our
+                    business to have a high carbon footprint
+                    <br />
+                    We have our studio with 2 workstations ready with all sound
+                    and video equipment.
+                  </Typography>
+                </Fade>
+              </Grid>
+            </BGOverlay>
           </Grid>
           <Grid
             container
-            className={`${classes.carouselSlide} ${classes.carouselSlide03}`}
+            className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide03}`}
             alignContent="flex-start"
           >
-            <Grid item xs={12} className={classes.sectionTitle}>
-              <Fade>
-                <Typography
-                  variant={
-                    useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
-                  }
-                  align="left"
-                  gutterBottom
-                >
-                  YELLOV PROPERTIES
-                </Typography>
-              </Fade>
-            </Grid>
-            <Grid item sm={12} md={8} className={classes.sectionContent}>
-              <Fade>
-                <Typography variant="h5" align="left">
-                  Yellov has some properties and has understanding agreements
-                  with other properties to facilitate our business needs
-                  <br />
-                  <br />
-                  1- Studio: Al Chillaya is our studio, main house. It’s a
-                  studio where we edit, color, and work on our projects. We have
-                  a small cinema, screens, light equipment and we’re working on
-                  making it more equipped as we go.
-                  <br />
-                  <br />
-                  2- Residency: Bob 55 is an art camp in Nuweiba just by the
-                  port. A life-changing experience that has a perfect mix
-                  between Bedouin heritage and Street art. A place where
-                  everything is for 55 where it's much simpler. We have 8
-                  Air-conditioned rooms with private bathrooms to accommodate
-                  our talents and artists.
-                  <br />
-                  <br />
-                  3- Workshop: Wala Haja workshop: We have an understanding
-                  statement with the Wala Haja workshop to bring in as many
-                  students as we can. This workshop offers carpentry courses,
-                  clay building, and wood carving courses.
-                  <br />
-                </Typography>
-              </Fade>
-            </Grid>
+            <BGOverlay alignContent="flex-start">
+              <Grid item xs={12} className={classes.sectionTitle}>
+                <Fade>
+                  <Typography
+                    variant={
+                      useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
+                    }
+                    align="left"
+                    gutterBottom
+                  >
+                    YELLOV PROPERTIES
+                  </Typography>
+                </Fade>
+              </Grid>
+              <Grid item sm={12} md={8} className={classes.sectionContent}>
+                <Fade>
+                  <Typography variant="h5" align="left">
+                    Yellov has some properties and has understanding agreements
+                    with other properties to facilitate our business needs
+                    <br />
+                    <br />
+                    1- Studio: Al Chillaya is our studio, main house. It’s a
+                    studio where we edit, color, and work on our projects. We
+                    have a small cinema, screens, light equipment and we’re
+                    working on making it more equipped as we go.
+                    <br />
+                    <br />
+                    2- Residency: Bob 55 is an art camp in Nuweiba just by the
+                    port. A life-changing experience that has a perfect mix
+                    between Bedouin heritage and Street art. A place where
+                    everything is for 55 where it's much simpler. We have 8
+                    Air-conditioned rooms with private bathrooms to accommodate
+                    our talents and artists.
+                    <br />
+                    <br />
+                    3- Workshop: Wala Haja workshop: We have an understanding
+                    statement with the Wala Haja workshop to bring in as many
+                    students as we can. This workshop offers carpentry courses,
+                    clay building, and wood carving courses.
+                    <br />
+                  </Typography>
+                </Fade>
+              </Grid>
+            </BGOverlay>
           </Grid>
           <Grid
             container
-            className={`${classes.carouselSlide} ${classes.carouselSlide04}`}
+            className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide04}`}
             alignContent="flex-start"
           >
-            <Grid item xs={12} className={classes.sectionTitle}>
-              <Fade>
-                <Typography
-                  variant={
-                    useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
-                  }
-                  align="left"
-                  gutterBottom
-                >
-                  YELLOV CREATIVE TRAVEL PROGRAMS
-                </Typography>
-              </Fade>
-            </Grid>
-            <Grid item sm={12} md={8} className={classes.sectionContent}>
-              <Fade>
-                <Typography variant="h5" align="left">
-                  1- YELLOV Experience: The program will include a week of
-                  Accommodation and Food provided by YELLOV to our talents. The
-                  talent is required to work for 4 days on projects from our
-                  wide portfolio of clients and takes 3 days off. So basically,
-                  You’ll add a project or two to your portfolio and spend 3 days
-                  vacation and 4 days that include a maximum of 7 working hours.
-                  <br />
-                  <br />
-                  2- YELLOV Work N’ Run: The program will include Accommodation
-                  and food for your whole stay, but you’ll stay only when we’re
-                  shooting/ working. It will be 2-4 days depending on the
-                  project size. Also, this is a paid program, salary is
-                  negotiated according to the project you’ll work on
-                  <br />
-                  <br />
-                  3- YELLOV Adventure: People have hobbies, sometimes these
-                  hobbies become an obsession If you want to do Kitesurfing,
-                  Diving, Carpentry, Clay, Swimming, Freediving, or Rock
-                  Climbing course. YELLOV will offer you the course, free of
-                  charge along with food for the whole week or a 15% discount on
-                  your accommodation
-                  <br />
-                  <br />
-                  So, If you’ve got what it takes please send us your Portfolio
-                  and talk to us about your relationship with Sinai? When did it
-                  start? How do you think you can make Sinai a global
-                  attraction? Which program would you prefer?
-                  <br />
-                  <br />
-                </Typography>
-              </Fade>
-            </Grid>
+            <BGOverlay>
+              <Grid item xs={12} className={classes.sectionTitle}>
+                <Fade>
+                  <Typography
+                    variant={
+                      useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
+                    }
+                    align="left"
+                    gutterBottom
+                  >
+                    YELLOV CREATIVE TRAVEL PROGRAMS
+                  </Typography>
+                </Fade>
+              </Grid>
+              <Grid item sm={12} md={8} className={classes.sectionContent}>
+                <Fade>
+                  <Typography variant="h5" align="left">
+                    1- YELLOV Experience: The program will include a week of
+                    Accommodation and Food provided by YELLOV to our talents.
+                    The talent is required to work for 4 days on projects from
+                    our wide portfolio of clients and takes 3 days off. So
+                    basically, You’ll add a project or two to your portfolio and
+                    spend 3 days vacation and 4 days that include a maximum of 7
+                    working hours.
+                    <br />
+                    <br />
+                    2- YELLOV Work N’ Run: The program will include
+                    Accommodation and food for your whole stay, but you’ll stay
+                    only when we’re shooting/ working. It will be 2-4 days
+                    depending on the project size. Also, this is a paid program,
+                    salary is negotiated according to the project you’ll work on
+                    <br />
+                    <br />
+                    3- YELLOV Adventure: People have hobbies, sometimes these
+                    hobbies become an obsession If you want to do Kitesurfing,
+                    Diving, Carpentry, Clay, Swimming, Freediving, or Rock
+                    Climbing course. YELLOV will offer you the course, free of
+                    charge along with food for the whole week or a 15% discount
+                    on your accommodation
+                    <br />
+                    <br />
+                    So, If you’ve got what it takes please send us your
+                    Portfolio and talk to us about your relationship with Sinai?
+                    When did it start? How do you think you can make Sinai a
+                    global attraction? Which program would you prefer?
+                    <br />
+                    <br />
+                  </Typography>
+                </Fade>
+              </Grid>
+            </BGOverlay>
           </Grid>
         </Carousel>
       </Grid>
@@ -536,148 +557,152 @@ export default function HomePage() {
       <Grid
         container
         name="contactUs"
-        className={`${classes.sectionContactInfo}`}
+        className={`${classes.sectionContactInfo} ${classes.backgroundImageUnfixed}`}
         alignContent="flex-start"
       >
-        <Grid item xs={12} md={6}>
-          <Fade>
-            <Typography
-              className={classes.sectionTitle}
-              variant="h2"
-              align="left"
-              gutterBottom
-            >
-              Our Services
-            </Typography>
-          </Fade>
-          <Fade>
+        <BGOverlay alignContent="flex-start">
+          <Grid item xs={12} md={6}>
+            <Fade>
+              <Typography
+                className={classes.sectionTitle}
+                variant="h2"
+                align="left"
+                gutterBottom
+              >
+                Our Services
+              </Typography>
+            </Fade>
+            <Fade>
+              <List>
+                <ListItem>
+                  <ListItemIcon>
+                    <CameraAltIcon
+                      fontSize="large"
+                      className={classes.contactUsIconsFill}
+                    />
+                  </ListItemIcon>
+                  Photoshoots
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <SpellcheckIcon
+                      fontSize="large"
+                      className={classes.contactUsIconsFill}
+                    />
+                  </ListItemIcon>
+                  Copywriting, PR Letters, Content Creation
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <VideoLibraryIcon
+                      fontSize="large"
+                      className={classes.contactUsIconsFill}
+                    />
+                  </ListItemIcon>
+                  Video Production, Editing, Color Correction
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <YouTubeIcon
+                      fontSize="large"
+                      className={classes.contactUsIconsFill}
+                    />
+                  </ListItemIcon>
+                  Youtube Channel Managment and Monetization
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <DvrIcon
+                      fontSize="large"
+                      className={classes.contactUsIconsFill}
+                    />
+                  </ListItemIcon>
+                  Digital Media Managment
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <WebIcon
+                      fontSize="large"
+                      className={classes.contactUsIconsFill}
+                    />
+                  </ListItemIcon>
+                  Web Development
+                </ListItem>
+              </List>
+            </Fade>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Fade>
+              <Typography
+                className={classes.sectionTitle}
+                variant="h2"
+                align="left"
+                gutterBottom
+              >
+                Contact Us
+              </Typography>
+            </Fade>
             <List>
               <ListItem>
                 <ListItemIcon>
-                  <CameraAltIcon
+                  <MailIcon
                     fontSize="large"
                     className={classes.contactUsIconsFill}
                   />
                 </ListItemIcon>
-                Photoshoots
+                <MaterialLink color="inherit">
+                  YellovSinai@gmail.com
+                </MaterialLink>
               </ListItem>
               <ListItem>
                 <ListItemIcon>
-                  <SpellcheckIcon
+                  <FacebookIcon
                     fontSize="large"
                     className={classes.contactUsIconsFill}
                   />
                 </ListItemIcon>
-                Copywriting, PR Letters, Content Creation
+                <MaterialLink
+                  color="inherit"
+                  href="https://www.facebook.com/YellovSinai/"
+                >
+                  YellovSinai
+                </MaterialLink>
               </ListItem>
               <ListItem>
                 <ListItemIcon>
-                  <VideoLibraryIcon
+                  <InstagramIcon
                     fontSize="large"
                     className={classes.contactUsIconsFill}
                   />
                 </ListItemIcon>
-                Video Production, Editing, Color Correction
+                <MaterialLink
+                  color="inherit"
+                  href="https://www.instagram.com/YellovSinai/"
+                >
+                  @YellovSinai
+                </MaterialLink>
               </ListItem>
               <ListItem>
                 <ListItemIcon>
-                  <YouTubeIcon
+                  <PhoneIcon
                     fontSize="large"
                     className={classes.contactUsIconsFill}
                   />
                 </ListItemIcon>
-                Youtube Channel Managment and Monetization
+                <MaterialLink color="inherit">069-3643049</MaterialLink>
               </ListItem>
               <ListItem>
                 <ListItemIcon>
-                  <DvrIcon
+                  <PhoneAndroidIcon
                     fontSize="large"
                     className={classes.contactUsIconsFill}
                   />
                 </ListItemIcon>
-                Digital Media Managment
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <WebIcon
-                    fontSize="large"
-                    className={classes.contactUsIconsFill}
-                  />
-                </ListItemIcon>
-                Web Development
+                <MaterialLink color="inherit">+201114476166</MaterialLink>
               </ListItem>
             </List>
-          </Fade>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Fade>
-            <Typography
-              className={classes.sectionTitle}
-              variant="h2"
-              align="left"
-              gutterBottom
-            >
-              Contact Us
-            </Typography>
-          </Fade>
-          <List>
-            <ListItem>
-              <ListItemIcon>
-                <MailIcon
-                  fontSize="large"
-                  className={classes.contactUsIconsFill}
-                />
-              </ListItemIcon>
-              <MaterialLink color="inherit">YellovSinai@gmail.com</MaterialLink>
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <FacebookIcon
-                  fontSize="large"
-                  className={classes.contactUsIconsFill}
-                />
-              </ListItemIcon>
-              <MaterialLink
-                color="inherit"
-                href="https://www.facebook.com/YellovSinai/"
-              >
-                YellovSinai
-              </MaterialLink>
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <InstagramIcon
-                  fontSize="large"
-                  className={classes.contactUsIconsFill}
-                />
-              </ListItemIcon>
-              <MaterialLink
-                color="inherit"
-                href="https://www.instagram.com/YellovSinai/"
-              >
-                @YellovSinai
-              </MaterialLink>
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <PhoneIcon
-                  fontSize="large"
-                  className={classes.contactUsIconsFill}
-                />
-              </ListItemIcon>
-              <MaterialLink color="inherit">069-3643049</MaterialLink>
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <PhoneAndroidIcon
-                  fontSize="large"
-                  className={classes.contactUsIconsFill}
-                />
-              </ListItemIcon>
-              <MaterialLink color="inherit">+201114476166</MaterialLink>
-            </ListItem>
-          </List>
-        </Grid>
+          </Grid>
+        </BGOverlay>
       </Grid>
     </Grid>
   );
