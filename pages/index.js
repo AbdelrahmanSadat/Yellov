@@ -134,7 +134,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.drawer + 1,
   },
   sectionMain: {
-    backgroundImage: "url(landscape03.jpeg)",
+    backgroundImage: "url(manOnBeach.jpeg)",
     minHeight: "100vh",
     color: "white",
   },
@@ -163,10 +163,11 @@ const useStyles = makeStyles((theme) => ({
   sectionContactInfo: {
     // minHeight: "100vh",
     // backgroundColor: "rgb(20, 20, 18)",
-    backgroundImage: "url(landscape02.jpeg)",
+    backgroundImage: "url(landscape02Centered.webp)",
     color: "white",
     ["@media (min-width:600px)"]: {
       // show only on 960px or greater
+      backgroundImage: "url(landscape02.jpeg)",
       fontSize: "2rem",
     },
   },
