@@ -319,7 +319,7 @@ export default function HomePage() {
           stopOnHover
           swipeable
           interval={5000}
-          swipeScrollTolerance={50}
+          swipeScrollTolerance={250}
         >
           <Grid
             container
