@@ -156,9 +156,12 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "2rem",
   },
   sectionSecondary: {
-    backgroundImage: "url(BassemSameh.jpg)",
+    backgroundImage: "url(workshopPortrait.webp)",
     minHeight: "100vh",
     color: "white",
+    ["@media (min-width:600px)"]: {
+      backgroundImage: "url(workshop.jpeg)",
+    },
   },
   sectionContactInfo: {
     // minHeight: "100vh",
@@ -166,7 +169,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: "url(landscape02Centered.webp)",
     color: "white",
     ["@media (min-width:600px)"]: {
-      // show only on 960px or greater
       backgroundImage: "url(landscape02.jpeg)",
       fontSize: "2rem",
     },
@@ -176,7 +178,7 @@ const useStyles = makeStyles((theme) => ({
   },
   carouselCustom: {
     width: "100%",
-    color: "white"
+    color: "white",
   },
   carouselSlide: {
     minHeight: "100vh",
@@ -416,56 +418,6 @@ export default function HomePage() {
           </Grid>
           <Grid
             container
-            className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide03}`}
-            alignContent="flex-start"
-          >
-            <BGOverlay alignContent="flex-start">
-              <Grid item xs={12} className={classes.sectionTitle}>
-                <Fade>
-                  <Typography
-                    variant={
-                      useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
-                    }
-                    align="left"
-                    gutterBottom
-                  >
-                    YELLOV PROPERTIES
-                  </Typography>
-                </Fade>
-              </Grid>
-              <Grid item sm={12} md={8} className={classes.sectionContent}>
-                <Fade>
-                  <Typography variant="h5" align="left">
-                    Yellov has some properties and has understanding agreements
-                    with other properties to facilitate our business needs
-                    <br />
-                    <br />
-                    1- Studio: Al Chillaya is our studio, main house. It’s a
-                    studio where we edit, color, and work on our projects. We
-                    have a small cinema, screens, light equipment and we’re
-                    working on making it more equipped as we go.
-                    <br />
-                    <br />
-                    2- Residency: Bob 55 is an art camp in Nuweiba just by the
-                    port. A life-changing experience that has a perfect mix
-                    between Bedouin heritage and Street art. A place where
-                    everything is for 55 where it's much simpler. We have 8
-                    Air-conditioned rooms with private bathrooms to accommodate
-                    our talents and artists.
-                    <br />
-                    <br />
-                    3- Workshop: Wala Haja workshop: We have an understanding
-                    statement with the Wala Haja workshop to bring in as many
-                    students as we can. This workshop offers carpentry courses,
-                    clay building, and wood carving courses.
-                    <br />
-                  </Typography>
-                </Fade>
-              </Grid>
-            </BGOverlay>
-          </Grid>
-          <Grid
-            container
             className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide04}`}
             alignContent="flex-start"
           >
@@ -532,30 +484,36 @@ export default function HomePage() {
           <Grid item xs={12} className={classes.sectionTitle}>
             <Fade>
               <Typography variant="h2" align="left" gutterBottom>
-                <b>Bassem Sameh</b>, Founder
-                <Divider className={classes.customDivider}></Divider>
+                YELLOV PROPERTIES
+                {/* <Divider className={classes.customDivider}></Divider> */}
               </Typography>
             </Fade>
           </Grid>
           <Grid item sm={12} md={8} className={classes.sectionContent}>
             <Fade>
               <Typography variant="h5" align="left">
-                Bassem is a producer/ event planner/ copywriter/editor. He
-                worked as a shisha boy in 2 different countries. He is currently
-                learning music production to make music for his videos.
+                Yellov has some properties and has understanding agreements with
+                other properties to facilitate our business needs
                 <br />
-                He started as an Event planner since he was 17 years old, Hosted
-                the biggest double concert in Alex in 2013 for Mashrou Leila
-                when he was only 19. He worked with the likes of Autostrad,
-                Jadal, Yasmine Hamdan, El Far3i, 47 Soul, El Morabba3, …etc.
                 <br />
-                He jumped to digital media content and advertising in 2014 and
-                he worked in this career with various agencies such as FP7/ CAI
-                , Nimblebot, Monkeys In Tuxedos. Worked on projects for
-                Mcdonald’s, Nestle, Redbull, and others. He produces as well. He
-                worked as an assistant producer at Hama Film Productions on
-                several ads then I produced a 2 copy TV ad for Vitrac with
-                Monkeys in Tuxedos.
+                1. Studio: Al Chillaya is our studio, main house. It’s a studio
+                where we edit, color, and work on our projects. We have a small
+                cinema, screens, light equipment and we’re working on making it
+                more equipped as we go.
+                <br />
+                <br />
+                2. Residency: Bob 55 is an art camp in Nuweiba just by the port.
+                A life-changing experience that has a perfect mix between
+                Bedouin heritage and Street art. A place where everything is for
+                55 where it's much simpler. We have 8 Air-conditioned rooms with
+                private bathrooms to accommodate our talents and artists.
+                <br />
+                <br />
+                3. Workshop: Wala Haja workshop: We have an understanding
+                statement with the Wala Haja workshop to bring in as many
+                students as we can. This workshop offers carpentry courses, clay
+                building, and wood carving courses.
+                <br />
               </Typography>
             </Fade>
           </Grid>
