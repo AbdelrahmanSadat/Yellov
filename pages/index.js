@@ -197,8 +197,11 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: "rgb(242,175,24)",
   },
   carouselSlide02: {
-    backgroundImage: "url(yellovBoardCentered.webp)",
+    backgroundImage: "url(workshop.jpeg)",
     // backgroundColor: "rgb(246, 237, 214)",
+    ["@media (min-width:600px)"]: {
+      backgroundImage: "url(yellovBoardCentered.webp)",
+    },
   },
   carouselSlide03: {
     backgroundImage: "url(workshop.jpeg)",
