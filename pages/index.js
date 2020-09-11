@@ -206,7 +206,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   carouselSlide03: {
-    backgroundImage: "url(BassemSameh.jpeg)",
+    backgroundImage: "url(BassemSameh.jpg)",
     // backgroundColor: "rgb(58, 71, 91)",
   },
   carouselSlide04: {
