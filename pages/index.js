@@ -141,9 +141,9 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   yellovMainLogo: {
-    backgroundImage: "url(/LogoCropped.png)",
-    height: "10rem",
-    width: "10rem",
+    backgroundImage: "url(/Logo.png)",
+    height: "20rem",
+    width: "20rem",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
@@ -194,11 +194,11 @@ const useStyles = makeStyles((theme) => ({
     padding: "2rem",
     paddingTop: "0",
   },
-  carouselSlide01: {
-    backgroundImage: "url(firepit.jpeg)",
+  carouselSlide02: {
+    backgroundImage: "url(noPlanetB.jpeg)",
     // backgroundColor: "rgb(242,175,24)",
   },
-  carouselSlide02: {
+  carouselSlide01: {
     backgroundImage: "url(yellovBoardPortrait.jpg)",
     // backgroundColor: "rgb(246, 237, 214)",
     ["@media (min-width:600px)"]: {
@@ -206,7 +206,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   carouselSlide03: {
-    backgroundImage: "url(workshop.jpeg)",
+    backgroundImage: "url(BassemSameh.jpeg)",
     // backgroundColor: "rgb(58, 71, 91)",
   },
   carouselSlide04: {
@@ -423,6 +423,52 @@ export default function HomePage() {
           </Grid>
           <Grid
             container
+            className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide03}`}
+            alignContent="flex-start"
+          >
+            <BGOverlay alignContent="flex-start">
+              <Grid item xs={12} className={classes.sectionTitle}>
+                <Fade>
+                  <Typography
+                    variant={
+                      useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
+                    }
+                    align="left"
+                    gutterBottom
+                  >
+                    ABOUT OUR FOUNDER
+                  </Typography>
+                </Fade>
+              </Grid>
+              <Grid item sm={12} md={8} className={classes.sectionContent}>
+                <Fade>
+                  <Typography variant="h5" align="left">
+                    Bassem is a producer/ event planner/ copywriter/editor. He
+                    worked as a shisha boy in 2 different countries. He is
+                    currently learning music production to make music for his
+                    videos.
+                    <br />
+                    He started as an Event planner since he was 17 years old,
+                    Hosted the biggest double concert in Alex in 2013 for
+                    Mashrou Leila when he was only 19. He worked with the likes
+                    of Autostrad, Jadal, Yasmine Hamdan, El Far3i, 47 Soul, El
+                    Morabba3, …etc.
+                    <br />
+                    He jumped to digital media content and advertising in 2014
+                    and he worked in this career with various agencies such as
+                    FP7/ CAI , Nimblebot, Monkeys In Tuxedos. Worked on projects
+                    for Mcdonald’s, Nestle, Redbull, and others. He produces as
+                    well. He worked as an assistant producer at Hama Film
+                    Productions on several ads then I produced a 2 copy TV ad
+                    for Vitrac with Monkeys in Tuxedos.
+                  </Typography>
+                </Fade>
+              </Grid>
+            </BGOverlay>
+          </Grid>
+
+          <Grid
+            container
             className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide04}`}
             alignContent="flex-start"
           >
@@ -488,7 +534,13 @@ export default function HomePage() {
         <BGOverlay alignContent="flex-start">
           <Grid item xs={12} className={classes.sectionTitle}>
             <Fade>
-              <Typography variant={useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"} align="left" gutterBottom>
+              <Typography
+                variant={
+                  useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"
+                }
+                align="left"
+                gutterBottom
+              >
                 YELLOV PROPERTIES
                 {/* <Divider className={classes.customDivider}></Divider> */}
               </Typography>
