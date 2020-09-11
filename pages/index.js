@@ -8,6 +8,8 @@
 
 // TODO: Nav items on hover, animate (show underline?)
 
+// TODO: set width: fit content on all sections?
+
 import React, { useEffect, useState } from "react";
 
 import { Carousel } from "react-responsive-carousel";
@@ -197,7 +199,7 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: "rgb(242,175,24)",
   },
   carouselSlide02: {
-    backgroundImage: "url(yellovBoardPortrait.webp)",
+    backgroundImage: "url(yellovBoardPortrait.jpg)",
     // backgroundColor: "rgb(246, 237, 214)",
     ["@media (min-width:600px)"]: {
       backgroundImage: "url(yellovBoardCentered.webp)",
