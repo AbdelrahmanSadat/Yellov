@@ -486,7 +486,7 @@ export default function HomePage() {
         <BGOverlay alignContent="flex-start">
           <Grid item xs={12} className={classes.sectionTitle}>
             <Fade>
-              <Typography variant="h2" align="left" gutterBottom>
+              <Typography variant={useMediaQuery(theme.breakpoints.up("sm")) ? "h2" : "h4"} align="left" gutterBottom>
                 YELLOV PROPERTIES
                 {/* <Divider className={classes.customDivider}></Divider> */}
               </Typography>
