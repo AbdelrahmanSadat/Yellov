@@ -81,7 +81,7 @@ const navButtonData = [
     to: "aboutUs",
   },
   {
-    text: "Founder",
+    text: "Properties",
     to: "secondary",
   },
   {
@@ -639,7 +639,7 @@ export default function HomePage() {
                       className={classes.contactUsIconsFill}
                     />
                   </ListItemIcon>
-                  Digital Media Managment
+                  Digital Media Management
                 </ListItem>
                 <ListItem>
                   <ListItemIcon>
