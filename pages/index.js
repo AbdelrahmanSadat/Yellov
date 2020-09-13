@@ -219,7 +219,7 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: "rgb(58, 71, 91)",
   },
   carouselSlide04: {
-    backgroundImage: "url(boatFromBeach.jpeg)",
+    backgroundImage: "url(nightSky.jpeg)",
     // backgroundColor: "rgb(63, 144, 157)",
   },
   customDivider: {
@@ -237,7 +237,10 @@ export default function HomePage() {
   });
 
   return (
-    <Grid container className={`${classes.mainWrapper} ${classes.fontAlegreya}`}>
+    <Grid
+      container
+      className={`${classes.mainWrapper} ${classes.fontAlegreya}`}
+    >
       <IconButton
         color="inherit"
         className={classes.menuButton}
@@ -312,7 +315,13 @@ export default function HomePage() {
           <Grid item xs={12}>
             <Fade>
               <Grid container className={classes.yellovMainLogo}></Grid>
-              <Typography variant="h1" align="center" color="inherit">
+              <Typography
+                variant={
+                  useMediaQuery(theme.breakpoints.up("sm")) ? "h1" : "h2"
+                }
+                align="center"
+                color="inherit"
+              >
                 YELLOV
               </Typography>
               <Typography
@@ -320,6 +329,7 @@ export default function HomePage() {
                 align="center"
                 color="inherit"
                 className={classes.fontCursiveDamion}
+                gutterBottom
               >
                 We Make You Do What Yellove
               </Typography>
@@ -335,12 +345,12 @@ export default function HomePage() {
           renderThumbs={() => undefined}
           className={classes.carouselCustom}
           transitionTime={1000}
-          // autoPlay
+          autoPlay
           stopOnHover
-          // interval={15000}
+          interval={15000}
           showArrows
           swipeable
-          // swipeScrollTolerance={200}
+          swipeScrollTolerance={5}
         >
           <Grid
             container
@@ -348,7 +358,7 @@ export default function HomePage() {
             alignContent="flex-start"
           >
             {/* TODO: padding and font size responsive */}
-            <BGOverlay alignContent="flex-start">
+            <BGOverlay alignContent="flex-start" layerColor="rgba(40, 40, 40, 0.5)">
               <Grid item xs={12} className={classes.sectionTitle}>
                 <Fade>
                   <Typography
@@ -396,7 +406,7 @@ export default function HomePage() {
             className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide02}`}
             alignContent="flex-start"
           >
-            <BGOverlay alignContent="flex-start">
+            <BGOverlay alignContent="flex-start" layerColor="rgba(40, 40, 40, 0.5)">
               <Grid item xs={12} className={classes.sectionTitle}>
                 <Fade>
                   <Typography
@@ -485,7 +495,7 @@ export default function HomePage() {
             className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide04}`}
             alignContent="flex-start"
           >
-            <BGOverlay>
+            <BGOverlay alignContent="flex-start" layerColor="rgba(40, 40, 40, 0.5)">
               <Grid item xs={12} className={classes.sectionTitle}>
                 <Fade>
                   <Typography
