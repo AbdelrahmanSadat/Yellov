@@ -114,6 +114,9 @@ const useStyles = makeStyles((theme) => ({
   fontCursiveDamion: {
     fontFamily: "'Damion', cursive",
   },
+  fontAlegreya: {
+    fontFamily: "Alegreya, cursive",
+  },
   pointer: {
     cursor: "pointer",
   },
@@ -234,7 +237,7 @@ export default function HomePage() {
   });
 
   return (
-    <Grid container className={classes.mainWrapper}>
+    <Grid container className={`${classes.mainWrapper} ${classes.fontAlegreya}`}>
       <IconButton
         color="inherit"
         className={classes.menuButton}
