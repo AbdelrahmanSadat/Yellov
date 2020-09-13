@@ -17,7 +17,7 @@ const theme = createMuiTheme({
       default: "#fff",
     },
     typography: {
-      fontFamily: "'Alegreya', serif",
+      fontFamily: "Alegreya, serif",
     },
   },
 });
