@@ -337,10 +337,10 @@ export default function HomePage() {
           transitionTime={1000}
           // autoPlay
           stopOnHover
-          interval={15000}
+          // interval={15000}
           showArrows
           swipeable
-          swipeScrollTolerance={200}
+          // swipeScrollTolerance={200}
         >
           <Grid
             container
