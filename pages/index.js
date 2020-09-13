@@ -321,16 +321,15 @@ export default function HomePage() {
         <Carousel
           infiniteLoop
           showStatus={false}
-          swipeable={false}
           renderThumbs={() => undefined}
           className={classes.carouselCustom}
           transitionTime={1000}
-          autoPlay
+          // autoPlay
           stopOnHover
-          interval={8000}
+          interval={15000}
           showArrows
-          // swipeable
-          // swipeScrollTolerance={250}
+          swipeable
+          swipeScrollTolerance={200}
         >
           <Grid
             container
@@ -424,7 +423,7 @@ export default function HomePage() {
               </Grid>
             </BGOverlay>
           </Grid>
-          <Grid
+          {/* <Grid
             container
             className={`${classes.carouselSlide} ${classes.backgroundImageUnfixed} ${classes.carouselSlide03}`}
             alignContent="flex-start"
@@ -468,7 +467,7 @@ export default function HomePage() {
                 </Fade>
               </Grid>
             </BGOverlay>
-          </Grid>
+          </Grid> */}
 
           <Grid
             container
