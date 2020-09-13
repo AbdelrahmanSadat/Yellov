@@ -195,11 +195,14 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "0",
   },
   carouselSlide02: {
-    backgroundImage: "url(noPlanetB.jpeg)",
+    backgroundImage: "url(rocksAndFrameOnBeach.webp)",
+    ["@media (min-width:600px)"]: {
+      backgroundImage: "url(noPlanetB.jpeg)",
+    },
     // backgroundColor: "rgb(242,175,24)",
   },
   carouselSlide01: {
-    backgroundImage: "url(yellovBoardPortrait.jpg)",
+    backgroundImage: "url(yellovBoard02Portrait.webp)",
     // backgroundColor: "rgb(246, 237, 214)",
     ["@media (min-width:600px)"]: {
       backgroundImage: "url(yellovBoardCentered.webp)",
