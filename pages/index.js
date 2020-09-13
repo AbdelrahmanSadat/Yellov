@@ -142,7 +142,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.drawer + 1,
   },
   sectionMain: {
-    backgroundImage: "url(manOnBeach.jpeg)",
+    backgroundImage: "url(manOnBeach.webp)",
     minHeight: "100vh",
     color: "white",
   },
@@ -168,7 +168,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100vh",
     color: "white",
     ["@media (min-width:600px)"]: {
-      backgroundImage: "url(workshop.jpeg)",
+      backgroundImage: "url(workshop.webp)",
     },
   },
   sectionContactInfo: {
@@ -177,7 +177,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: "url(landscape02Centered.webp)",
     color: "white",
     ["@media (min-width:600px)"]: {
-      backgroundImage: "url(landscape02.jpeg)",
+      backgroundImage: "url(landscape02.webp)",
       fontSize: "2rem",
     },
   },
@@ -203,7 +203,7 @@ const useStyles = makeStyles((theme) => ({
   carouselSlide02: {
     backgroundImage: "url(rocksAndFrameOnBeach.webp)",
     ["@media (min-width:600px)"]: {
-      backgroundImage: "url(noPlanetB.jpeg)",
+      backgroundImage: "url(noPlanetB.webp)",
     },
     // backgroundColor: "rgb(242,175,24)",
   },
