@@ -340,6 +340,7 @@ export default function HomePage() {
 
       <Grid container name="aboutUs" className={classes.carouselContainer}>
         <Carousel
+          swipeable={false} 
           infiniteLoop
           showStatus={false}
           renderThumbs={() => undefined}
@@ -349,7 +350,6 @@ export default function HomePage() {
           stopOnHover
           interval={10000}
           showArrows
-          swipeable={false}
           // swipeScrollTolerance={5}
         >
           <Grid
