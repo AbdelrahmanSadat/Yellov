@@ -349,7 +349,7 @@ export default function HomePage() {
           stopOnHover
           interval={10000}
           showArrows
-          // swipeable
+          swipeable={false}
           // swipeScrollTolerance={5}
         >
           <Grid
