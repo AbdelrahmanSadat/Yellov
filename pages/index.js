@@ -111,6 +111,9 @@ const useStyles = makeStyles((theme) => ({
   emboldened: {
     fontWeight: "700",
   },
+  fontCursiveDamion: {
+    fontFamily: "'Damion', cursive",
+  },
   pointer: {
     cursor: "pointer",
   },
@@ -307,9 +310,14 @@ export default function HomePage() {
             <Fade>
               <Grid container className={classes.yellovMainLogo}></Grid>
               <Typography variant="h1" align="center" color="inherit">
-                Yellov
+                YELLOV
               </Typography>
-              <Typography variant="h4" align="center" color="inherit">
+              <Typography
+                variant="h4"
+                align="center"
+                color="inherit"
+                className={classes.fontCursiveDamion}
+              >
                 We Make You Do What Yellove
               </Typography>
             </Fade>
