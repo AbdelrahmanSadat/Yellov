@@ -348,7 +348,7 @@ export default function HomePage() {
           transitionTime={1000}
           autoPlay
           stopOnHover
-          interval={10000}
+          interval={30000}
           showArrows
           // swipeScrollTolerance={5}
         >
