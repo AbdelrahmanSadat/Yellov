@@ -18,7 +18,8 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: "Alegreya, serif",
+    fontFamily: "'Titillium Web', Alegreya, serif",
+    fontWeight: 300
   },
 });
 

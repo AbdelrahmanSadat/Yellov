@@ -111,11 +111,18 @@ const useStyles = makeStyles((theme) => ({
   emboldened: {
     fontWeight: "700",
   },
+  fontLight: {
+    fontWeight: 300
+  },
   fontCursiveDamion: {
     fontFamily: "'Damion', cursive",
   },
   fontAlegreya: {
     fontFamily: "Alegreya, cursive",
+  },
+  fontTitilliumLight: {
+    fontFamily: "'Titillium Web', sans-serif",
+    fontWeight: 300
   },
   pointer: {
     cursor: "pointer",
@@ -239,7 +246,8 @@ export default function HomePage() {
   return (
     <Grid
       container
-      className={`${classes.mainWrapper} ${classes.fontAlegreya}`}
+      className={`${classes.mainWrapper} ${classes.fontLight}`}
+      fontWeight= "fontWeightLight"
     >
       <IconButton
         color="inherit"
@@ -512,7 +520,7 @@ export default function HomePage() {
               <Grid item sm={12} md={8} className={classes.sectionContent}>
                 <Fade>
                   <Typography variant="h5" align="left">
-                    1- YELLOV Experience: The program will include a week of
+                    1. <i>YELLOV Experience</i>: The program will include a week of
                     Accommodation and Food provided by YELLOV to our talents.
                     The talent is required to work for 4 days on projects from
                     our wide portfolio of clients and takes 3 days off. So
@@ -521,14 +529,14 @@ export default function HomePage() {
                     working hours.
                     <br />
                     <br />
-                    2- YELLOV Work N’ Run: The program will include
+                    2. <i>YELLOV Work N’ Run</i>: The program will include
                     Accommodation and food for your whole stay, but you’ll stay
                     only when we’re shooting/ working. It will be 2-4 days
                     depending on the project size. Also, this is a paid program,
                     salary is negotiated according to the project you’ll work on
                     <br />
                     <br />
-                    3- YELLOV Adventure: People have hobbies, sometimes these
+                    3. <i>YELLOV Adventure</i>: People have hobbies, sometimes these
                     hobbies become an obsession If you want to do Kitesurfing,
                     Diving, Carpentry, Clay, Swimming, Freediving, or Rock
                     Climbing course. YELLOV will offer you the course, free of
@@ -576,20 +584,20 @@ export default function HomePage() {
                 other properties to facilitate our business needs
                 <br />
                 <br />
-                1. Studio: Al Chillaya is our studio, main house. It’s a studio
+                1. <i>Studio</i>: Al Chillaya is our studio, main house. It’s a studio
                 where we edit, color, and work on our projects. We have a small
                 cinema, screens, light equipment and we’re working on making it
                 more equipped as we go.
                 <br />
                 <br />
-                2. Residency: Bob 55 is an art camp in Nuweiba just by the port.
+                2. <i>Residency</i>: Bob 55 is an art camp in Nuweiba just by the port.
                 A life-changing experience that has a perfect mix between
                 Bedouin heritage and Street art. A place where everything is for
                 55 where it's much simpler. We have 8 Air-conditioned rooms with
                 private bathrooms to accommodate our talents and artists.
                 <br />
                 <br />
-                3. Workshop: Wala Haja workshop: We have an understanding
+                3. <i>Workshop</i>: Wala Haja workshop: We have an understanding
                 statement with the Wala Haja workshop to bring in as many
                 students as we can. This workshop offers carpentry courses, clay
                 building, and wood carving courses.
