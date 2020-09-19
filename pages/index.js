@@ -96,6 +96,9 @@ const useStyles = makeStyles((theme) => ({
     ["@media (max-width:319px)"]: {
       minWidth: "fit-content",
     },
+    ["@media (min-width: 1000px) and (min-height: 1000px)"]: {
+      fontSize: "1.5rem"
+    }
   },
   backgroundImage: {
     backgroundPosition: "center",
@@ -246,7 +249,7 @@ export default function HomePage() {
   return (
     <Grid
       container
-      className={`${classes.mainWrapper}`}
+      className={`${classes.mainWrapper} ${classes.fontLight}`}
     >
       <IconButton
         color="inherit"
@@ -380,7 +383,7 @@ export default function HomePage() {
                   </Typography>
                 </Fade>
               </Grid>
-              <Grid item sm={12} md={8} className={classes.sectionContent}>
+              <Grid item sm={12} lg={8} className={classes.sectionContent}>
                 <Fade>
                   <Typography variant="h5" align="left">
                     YELLOV is a commune; which is a community of people who love
@@ -428,7 +431,7 @@ export default function HomePage() {
                   </Typography>
                 </Fade>
               </Grid>
-              <Grid item sm={12} md={8} className={classes.sectionContent}>
+              <Grid item sm={12} lg={8} className={classes.sectionContent}>
                 <Fade>
                   <Typography variant="h5" align="left">
                     YELLOV has a wide portfolio of clients starting from a coach
@@ -517,7 +520,8 @@ export default function HomePage() {
                   </Typography>
                 </Fade>
               </Grid>
-              <Grid item sm={12} md={8} className={classes.sectionContent}>
+              <Grid item sm={12} lg
+              ={8} className={classes.sectionContent}>
                 <Fade>
                   <Typography variant="h5" align="left">
                     1. <i>YELLOV Experience</i>: The program will include a week of
@@ -577,7 +581,7 @@ export default function HomePage() {
               </Typography>
             </Fade>
           </Grid>
-          <Grid item sm={12} md={8} className={classes.sectionContent}>
+          <Grid item sm={12} lg={8} className={classes.sectionContent}>
             <Fade>
               <Typography variant="h5" align="left">
                 Yellov has some properties and has understanding agreements with
