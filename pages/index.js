@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "'Damion', cursive",
   },
   fontAlegreya: {
-    fontFamily: "Alegreya, cursive",
+    fontFamily: "Alegreya, serif",
   },
   fontTitilliumLight: {
     fontFamily: "'Titillium Web', sans-serif",
