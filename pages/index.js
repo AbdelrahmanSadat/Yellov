@@ -246,8 +246,7 @@ export default function HomePage() {
   return (
     <Grid
       container
-      className={`${classes.mainWrapper} ${classes.fontLight}`}
-      fontWeight= "fontWeightLight"
+      className={`${classes.mainWrapper}`}
     >
       <IconButton
         color="inherit"
@@ -329,6 +328,7 @@ export default function HomePage() {
                 }
                 align="center"
                 color="inherit"
+                className={classes.fontAlegreya}
               >
                 YELLOV
               </Typography>
